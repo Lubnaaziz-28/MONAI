@@ -25,6 +25,10 @@ class UNETR(nn.Module):
     """
     UNETR based on: "Hatamizadeh et al.,
     UNETR: Transformers for 3D Medical Image Segmentation <https://arxiv.org/abs/2103.10504>"
+
+    Spatial shape validation:
+    Input ``img_size`` must be divisible by the patch size (default 16) along each spatial dimension.
+    For non-conforming inputs, pad or crop before calling forward to avoid shape mismatches.
     """
 
     def __init__(
